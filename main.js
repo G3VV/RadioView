@@ -21,6 +21,7 @@ app.get('/view/freshbeat', cors(corsOptions), api.freshbeat);
 app.get('/view/aqua', cors(corsOptions), api.aqua);
 app.get('/view/bladefm', cors(corsOptions), api.bladefm);
 app.get('/view/redras', cors(corsOptions), api.redras);
+app.get('/view/pulse', cors(corsOptions), api.pulse);
 
 
 app.get('/graph', cors(corsOptions), chart.select);

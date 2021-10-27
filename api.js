@@ -198,6 +198,45 @@ axios.get('https://sc.freshbeatradio.uk/api/nowplaying/1', {
 }
 
 
+exports.pulse = function(req, res){
+
+    axios.get('https://derrick.xonosho.st/api/nowplaying/3', {
+          timeout: 2000
+        }).then(function (response) {
+             res.json({
+                playing: {
+                    song: response.data.now_playing.song.title,
+                    artist: response.data.now_playing.song.artist
+                },
+                dj: {
+                    name: response.data.live.streamer_name || "AutoDJ"
+                },
+                listeners: {
+                    current: response.data.listeners.total,
+                    unique: response.data.listeners.unique,
+                    
+                }
+            });
+        }).catch(function (error) {
+             res.json({
+                playing: {
+                    song: "Error",
+                    artist: "Error"
+                },
+                dj: {
+                    name: "Error" || "AutoDJ"
+                },
+                listeners: {
+                    current: 0,
+                    unique: 0,
+                    
+                }
+            });
+        })
+    
+}
+
+
 exports.aqua = function(req, res){
 
     axios.get('https://api.itsaqua.net/stats', {
@@ -235,6 +274,13 @@ exports.aqua = function(req, res){
         })
     
 }
+
+
+
+
+
+
+
 
 exports.bladefm = function(req, res){
 
@@ -326,7 +372,8 @@ exports.view = function(req, res){
                     "/freshbeat",
                     "/aqua",
                     "/bladefm",
-                    "/redras"
+                    "/redras",
+                    "/pulse"
                 ]
             });
         }).catch(function (error) {
@@ -338,6 +385,8 @@ exports.view = function(req, res){
         })
     
 }
+
+
 
 
 exports.select = function(req, res){
