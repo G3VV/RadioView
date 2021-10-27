@@ -373,7 +373,7 @@ exports.view = function(req, res){
                     "/aqua",
                     "/bladefm",
                     "/redras",
-                    "/pulse#"
+                    "/pulse"
                 ]
             });
         }).catch(function (error) {
