@@ -329,7 +329,6 @@ exports.view = function(req, res){
              res.json({
                 success: 'true',
                 message: [
-                    "/paradise",
                     "/harmony",
                     "/beats",
                     "/freshbeat",
