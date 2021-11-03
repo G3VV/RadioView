@@ -323,7 +323,7 @@ exports.redras = function(req, res){
 
 exports.view = function(req, res){
 
-    axios.get('http://194.163.182.203:3000', {
+    axios.get('https://radioview.info/view/beats', {
           timeout: 2000
         }).then(function (response) {
              res.json({
@@ -353,7 +353,7 @@ exports.view = function(req, res){
 
 exports.select = function(req, res){
 
-axios.get('http://194.163.182.203:3000', {
+axios.get('https://radioview.info/view/beats', {
       timeout: 2000
     }).then(function (response) {
          res.json({
