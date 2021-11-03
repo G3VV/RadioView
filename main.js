@@ -14,7 +14,6 @@ var chart = require("./graph");
 
 app.get('/', cors(corsOptions), api.select);
 app.get('/view', cors(corsOptions), api.view);
-app.get('/view/paradise', cors(corsOptions), api.paradise);
 app.get('/view/harmony', cors(corsOptions), api.harmony);
 app.get('/view/beats', cors(corsOptions), api.beats);
 app.get('/view/freshbeat', cors(corsOptions), api.freshbeat);

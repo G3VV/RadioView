@@ -7,43 +7,6 @@ const cors = require('cors');
 // Bad a javascript let's hope I get better B)
 // anyways enjoy snooping around
 
-exports.paradise = function(req, res){
-
-    axios.get('https://api.itsparadise.net/', { // api url stuff
-    timeout: 2000
-  }).then(function (response) {
-       res.json({
-          playing: {
-              song: response.data.now.title, // remember no data
-              artist: response.data.now.artist
-          },
-          dj: {
-              name: response.data.dj.name || "AutoDJ"
-          },
-          listeners: {
-              current: response.data.listeners.total,
-              unique: response.data.listeners.total,
-              
-          }
-      });
-  }).catch(function (error) {
-      res.json({
-          playing: {
-              song: "Error",
-              artist: "Error"
-          },
-          dj: {
-              name: "Error" || "AutoDJ"
-          },
-          listeners: {
-              current: 0,
-              unique: 0,
-              
-          }
-      });
-  })
-
-}
 
 
 exports.upbeat = function(req, res){
@@ -360,7 +323,7 @@ exports.redras = function(req, res){
 
 exports.view = function(req, res){
 
-    axios.get('https://radioview.live/view/paradise', {
+    axios.get('https://radioview.live/view/beats', {
           timeout: 2000
         }).then(function (response) {
              res.json({
@@ -391,7 +354,7 @@ exports.view = function(req, res){
 
 exports.select = function(req, res){
 
-axios.get('https://radioview.live/view/paradise', {
+axios.get('https://radioview.live/view/beats', {
       timeout: 2000
     }).then(function (response) {
          res.json({
